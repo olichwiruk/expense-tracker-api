@@ -1,11 +1,18 @@
+# frozen_string_literal: true
+
 class ReceiptsController < ApplicationController
-  def upload
+  def create
     errors = validate_upload_params
 
-    if errors.empty?
-      render json: { success: true }, status: :accepted
-    else
-      render json: { errors: errors }, status: :bad_request
+    return render json: { errors: errors }, status: :bad_request if errors.any?
+
+    status, result = Receipts::CreateService.call(params)
+
+    case status
+    when :ok
+      render json: { success: true, receiptId: result.id }, status: :accepted
+    when :error
+      render json: { errors: result }, status: :unprocessable_entity
     end
   end
 
