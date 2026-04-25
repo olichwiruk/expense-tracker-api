@@ -24,7 +24,7 @@ _Architecture visualized using _[﻿C4 model](https://c4model.com/)_ methodology
 - [x] Build `AnalyzeJob`  to retrieve `Receipt`  records by ID and prepare images for LLM processing
 - [x] Migrate storing photos from base64 to ActiveStorage (Local storage)
 - [x] Integrate `RubyLLM`  for image to JSON extraction using structured output
-- [ ] Persist final extracted data into a JSONB column and update `status`  to success
+- [x] Persist final extracted data into a JSONB column and update `status`  to success
 - [ ] Define data contracts with `dry-struct`  and generate corresponding JSON Schemas
 - [ ] Create `LlmAttempt`  model to log full request/response history for observability
 - [ ] Implement a self-correction loop to retry extraction with error feedback if validation fails (max 1 retry)
