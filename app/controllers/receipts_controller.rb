@@ -13,6 +13,6 @@ class ReceiptsController < ApplicationController
   end
 
   private def create_params
-    params.permit(:photo_base64)
+    params.permit(:photo)
   end
 end

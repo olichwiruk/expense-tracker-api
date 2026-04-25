@@ -22,7 +22,7 @@ _Architecture visualized using _[﻿C4 model](https://c4model.com/)_ methodology
 - [x] Create `Receipt`  model with `photo_base64`  column (text) and `status`  management (pending, processing, success, failed)
 - [x] Implement `POST /receipts`  endpoint to save raw Base64 data and trigger background processing
 - [x] Build `AnalyzeJob`  to retrieve `Receipt`  records by ID and prepare images for LLM processing
-- [ ] Migrate storing photos from base64 to ActiveStorage (Local storage)
+- [x] Migrate storing photos from base64 to ActiveStorage (Local storage)
 - [ ] Integrate `RubyLLM`  for image to JSON extraction using structured output
 - [ ] Persist final extracted data into a JSONB column and update `status`  to success
 - [ ] Define data contracts with `dry-struct`  and generate corresponding JSON Schemas
