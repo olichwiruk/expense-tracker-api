@@ -12,11 +12,11 @@ module Llm
         end
       end
 
-      def extract_structured_data(image:)
+      def extract_structured_data(image:, schema: receipt_schema)
         chat = client.chat.with_instructions(
           "You are an engine for extracting data from receipt images"
         )
-          .with_schema(receipt_schema)
+          .with_schema(schema)
 
         chat
           .ask(
