@@ -27,8 +27,6 @@ _Architecture visualized using _[﻿C4 model](https://c4model.com/)_ methodology
 - [x] Persist final extracted data into a JSONB column and update `status`  to success
 - [x] Define data contracts with `dry-struct`  and generate corresponding JSON Schemas
 - [x] Create `LlmAttempt`  model to log full request/response history for observability
-- [ ] Implement a self-correction loop to retry extraction with error feedback if validation fails (max 1 retry)
-- [ ] Implement `GET /receipts`  endpoint to list records and monitor extraction results
 ### Pre-MVP
 - [ ] Setup RSpec, FactoryBot, and DatabaseCleaner
 - [ ] Configure VCR for mocking LLM API responses
@@ -39,8 +37,9 @@ _Architecture visualized using _[﻿C4 model](https://c4model.com/)_ methodology
 - [ ] Establish multi-tenant architecture (`User`  -> `Household`  -> `Receipt`)
 - [ ] Implement Bring-your-own-key with `LlmCredentials`  scoped to `User` /`Household`  for customizable API keys
 - [ ] Add multi-provider support with Adapters for OpenAI and Anthropic
-- [ ] Scope `GET /receipts`  strictly to `current_user.household` 
+- [ ] Implement `GET /receipts` scoped strictly to `current_user.household`
 - [ ] Develop mobile-friendly frontend using React and Tailwind CSS (with ActionCable for real-time updates)
+- [ ] Implement a self-correction loop to retry extraction with error feedback if validation fails (max 1 retry)
 - [ ] Build Human-in-the-loop UI with manual correction interface at `GET /receipts/:id` 
 - [ ] Implement change tracking system (diffing LLM output vs. human edits) for model evaluation
 - [ ] Build security guardrail (secondary LLM request) to detect Prompt Injection and non-receipt images
