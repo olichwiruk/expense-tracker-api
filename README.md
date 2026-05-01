@@ -26,7 +26,7 @@ _Architecture visualized using _[﻿C4 model](https://c4model.com/)_ methodology
 - [x] Integrate `RubyLLM`  for image to JSON extraction using structured output
 - [x] Persist final extracted data into a JSONB column and update `status`  to success
 - [x] Define data contracts with `dry-struct`  and generate corresponding JSON Schemas
-- [ ] Create `LlmAttempt`  model to log full request/response history for observability
+- [x] Create `LlmAttempt`  model to log full request/response history for observability
 - [ ] Implement a self-correction loop to retry extraction with error feedback if validation fails (max 1 retry)
 - [ ] Implement `GET /receipts`  endpoint to list records and monitor extraction results
 ### Pre-MVP

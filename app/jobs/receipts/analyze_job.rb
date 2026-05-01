@@ -7,7 +7,10 @@ module Receipts
     def perform(receipt_id)
       receipt = ::Receipt.find(receipt_id)
       service = Receipts::AnalyzeService.new(
-        llm_adapter: Llm::Adapters::OpenAi.new
+        llm_adapter: Llm::AuditedAdapter.new(
+          Llm::Adapters::OpenAi.new,
+          receipt
+        )
       )
       service.call(receipt)
     end
