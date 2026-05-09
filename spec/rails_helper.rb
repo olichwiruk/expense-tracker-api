@@ -75,4 +75,10 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   config.include FactoryBot::Syntax::Methods
+
+  config.include ActiveJob::TestHelper
+
+  config.before(:each) do
+    ActiveJob::Base.queue_adapter = :test
+  end
 end
