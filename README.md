@@ -29,7 +29,7 @@ _Architecture visualized using _[﻿C4 model](https://c4model.com/)_ methodology
 - [x] Create `LlmAttempt`  model to log full request/response history for observability
 ### Pre-MVP
 - [x] Setup RSpec and FactoryBot
-- [ ] Configure VCR for mocking LLM API responses
+- [x] Configure VCR for mocking LLM API responses
 - [ ] Write unit and integration tests
 - [ ] Configure lograge for structured JSON logging
 ### MVP
