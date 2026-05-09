@@ -10,7 +10,11 @@ class ReceiptsController < ApplicationController
 
     case result
     in Success(receipt)
-      render json: { success: true, receiptId: receipt.id }, status: :created
+      render json: ApiResponseBlueprint.render(
+        receipt,
+        blueprint: ReceiptBlueprint,
+        data_view: :created
+      ), status: :created
     in Failure(receipt)
       render_errors(receipt.errors, :unprocessable_content)
     end

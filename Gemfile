@@ -32,6 +32,7 @@ gem "active_storage_validations"
 gem "ruby_llm"
 gem "dry-struct"
 gem "dry-monads"
+gem "blueprinter"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

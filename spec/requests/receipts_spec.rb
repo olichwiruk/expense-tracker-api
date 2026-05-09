@@ -19,8 +19,11 @@ describe "Upload receipt", type: :request do
 
         aggregate_failures "response and side effects" do
           expect(response).to have_http_status(:created)
-          receipt_id = response.parsed_body["receiptId"]
-          expect(Receipts::AnalyzeJob).to have_been_enqueued.with(receipt_id)
+
+          id = response.parsed_body.dig("data", "id")
+          expect(id).to be_present.and be_a(Integer)
+
+          expect(Receipts::AnalyzeJob).to have_been_enqueued.with(id)
         end
       end
     end
